@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" class="antialiased" data-theme="daylight">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Videos</title>
+    <link rel="icon" href="./favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <script>
+      (function () {
+        var themes = ["daylight", "spacetime", "build-knight", "chicago95", "lisp"];
+        var dark = { spacetime: true, "build-knight": true, lisp: true };
+        var legacy = { day: "daylight", dim: "spacetime", night: "build-knight" };
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var theme = prefersDark ? "build-knight" : "daylight";
+        try {
+          var stored = localStorage.getItem("theme");
+          if (Object.prototype.hasOwnProperty.call(legacy, stored)) stored = legacy[stored];
+          if (themes.indexOf(stored) >= 0) theme = stored;
+        } catch (e) {}
+        var root = document.documentElement;
+        root.dataset.theme = theme;
+        root.classList.toggle("dark", !!dark[theme]);
+        root.style.colorScheme = dark[theme] ? "dark" : "light";
+      })();
+    </script>
+    <link rel="stylesheet" href="./src/styles/core.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.jsx"></script>
+  </body>
+</html>

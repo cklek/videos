@@ -1,0 +1,20 @@
+:root:not([data-theme]),
+[data-theme="build-knight"] {
+  color-scheme: dark;
+
+  --ground: #0f0f0f;
+  --line: #151515;
+  --surface: #141414;
+  --muted: #515151;
+  --raised: #1c1c1c;
+  --text: #e7e5e4;
+  --paper: #e7e5e4;
+  --ink: #ffffff;
+  --accent: #ff6462;
+  --accent-2: #7ba2f7;
+
+  --danger: #ff4b48;
+  --ok: #99d68f;
+  --info: #74dbcb;
+  --warn: #ebc06d;
+}

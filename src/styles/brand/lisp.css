@@ -1,0 +1,24 @@
+:root:not([data-theme]),
+[data-theme="lisp"] {
+  color-scheme: dark;
+
+  --ground: #000080;
+  --line: #ffffff;
+  --surface: #000080;
+  --muted: #ffffff;
+  --raised: #ffffff;
+  --text: #ffffff;
+  --paper: #ffffff;
+  --ink: #0000ee;
+  --accent: #00ffee;
+  --accent-2: #ffff00;
+  --link: #0000ee;
+  --cyan: #00ffee;
+  --magenta: #ff00ff;
+  --yellow: #ffff00;
+
+  --danger: #ff4b48;
+  --ok: #99d68f;
+  --info: #74dbcb;
+  --warn: #ebc06d;
+}

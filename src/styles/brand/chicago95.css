@@ -1,0 +1,24 @@
+:root:not([data-theme]),
+[data-theme="chicago95"] {
+  color-scheme: light;
+
+  --ground: #c0c0c0;
+  --line: #808080;
+  --surface: #c0c0c0;
+  --muted: #808080;
+  --raised: #ffffff;
+  --text: #000000;
+  --paper: #e7e5e4;
+  --ink: #141414;
+  --accent: #000080;
+  --accent-2: #008081;
+  --link: #0000ee;
+  --cyan: #00ffee;
+  --magenta: #ff00ff;
+  --yellow: #ffff00;
+
+  --danger: #ff4b48;
+  --ok: #99d68f;
+  --info: #74dbcb;
+  --warn: #ebc06d;
+}

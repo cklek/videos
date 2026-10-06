@@ -1,0 +1,20 @@
+:root:not([data-theme]),
+[data-theme="spacetime"] {
+  color-scheme: dark;
+
+  --ground: #1a1b26;
+  --line: #33364f;
+  --surface: #202130;
+  --muted: #51568b;
+  --raised: #2a2c40;
+  --text: #c0caf5;
+  --paper: #c0caf5;
+  --ink: #e7e9ff;
+  --accent: #385ffa;
+  --accent-2: #7ba2f7;
+
+  --danger: #ff4b48;
+  --ok: #99d68f;
+  --info: #74dbcb;
+  --warn: #ebc06d;
+}

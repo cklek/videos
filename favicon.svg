@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Tabler Icons "video" (MIT) on the Build Knight ground -->
+  <rect width="32" height="32" fill="#0F0F0F" />
+  <g transform="translate(4 4)" fill="none" stroke="#E7E5E4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4" />
+    <path d="M3 8a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2l0 -8" />
+  </g>
+</svg>

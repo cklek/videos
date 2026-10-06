@@ -1,0 +1,20 @@
+:root:not([data-theme]),
+[data-theme="daylight"] {
+  color-scheme: light;
+
+  --ground: #d4cbb3;
+  --line: #c4bba3;
+  --surface: #ddd6c1;
+  --muted: #6b665a;
+  --raised: #e4dfcf;
+  --text: #2b2b2b;
+  --paper: #e7e5e4;
+  --ink: #141414;
+  --accent: #ff4b48;
+  --accent-2: #ebc06d;
+
+  --danger: #ff4b48;
+  --ok: #99d68f;
+  --info: #74dbcb;
+  --warn: #ebc06d;
+}

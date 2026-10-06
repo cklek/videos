@@ -1,0 +1,309 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./shadcn.css";
+@import "./brand/build-knight.css";
+@import "./brand/spacetime.css";
+@import "./brand/chicago95.css";
+@import "./brand/lisp.css";
+@import "./brand/daylight.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+
+  --text-*: initial;
+  --leading-*: initial;
+  --tracking-*: initial;
+
+  --spacing: 4px;
+  --radius: 0px;
+}
+
+@theme inline {
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-paper: var(--paper);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-brand: var(--accent);
+  --color-brand-2: var(--accent-2);
+  --color-danger: var(--danger);
+  --color-ok: var(--ok);
+  --color-info: var(--info);
+  --color-warn: var(--warn);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--ui-muted);
+  --color-muted-foreground: var(--ui-muted-foreground);
+  --color-accent: var(--ui-accent);
+  --color-accent-foreground: var(--ui-accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+}
+
+:root {
+  --background: var(--ground);
+  --foreground: var(--text);
+  --card: var(--surface);
+  --card-foreground: var(--text);
+  --popover: var(--surface);
+  --popover-foreground: var(--text);
+  --primary: var(--ink);
+  --primary-foreground: var(--ground);
+  --secondary: var(--raised);
+  --secondary-foreground: var(--text);
+  --ui-muted: var(--raised);
+  --ui-muted-foreground: var(--muted);
+  --ui-accent: var(--raised);
+  --ui-accent-foreground: var(--ink);
+  --destructive: var(--danger);
+  --destructive-foreground: var(--ink);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--line);
+  --sidebar: var(--ground);
+  --sidebar-foreground: var(--text);
+  --sidebar-border: var(--line);
+}
+
+:root[data-theme="chicago95"] {
+  --primary: var(--accent);
+  --primary-foreground: var(--raised);
+  --ui-accent: var(--accent);
+  --ui-accent-foreground: var(--raised);
+}
+
+:root[data-theme="lisp"] {
+  --primary: var(--paper);
+  --primary-foreground: var(--ink);
+  --secondary-foreground: var(--ink);
+  --ui-muted: color-mix(in oklab, var(--ground), var(--raised) 12%);
+  --destructive-foreground: var(--text);
+}
+
+html {
+  background: var(--ground);
+}
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility rule-t {
+  --tw-inset-shadow: inset 0 1px 0 var(--color-border);
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+@utility rule-r {
+  --tw-inset-shadow: inset -1px 0 0 var(--color-border);
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+@utility rule-b {
+  --tw-inset-shadow: inset 0 -1px 0 var(--color-border);
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+@utility rule-l {
+  --tw-inset-shadow: inset 1px 0 0 var(--color-border);
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+@utility rule-x {
+  --tw-inset-shadow:
+    inset 1px 0 0 var(--color-border), inset -1px 0 0 var(--color-border);
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+@utility rule-y {
+  --tw-inset-shadow:
+    inset 0 1px 0 var(--color-border), inset 0 -1px 0 var(--color-border);
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+@utility rule-tl {
+  --tw-inset-shadow:
+    inset 0 1px 0 var(--color-border), inset 1px 0 0 var(--color-border);
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+@utility rule-tr {
+  --tw-inset-shadow:
+    inset 0 1px 0 var(--color-border), inset -1px 0 0 var(--color-border);
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+@utility rule-bl {
+  --tw-inset-shadow:
+    inset 0 -1px 0 var(--color-border), inset 1px 0 0 var(--color-border);
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+@utility rule-br {
+  --tw-inset-shadow:
+    inset 0 -1px 0 var(--color-border), inset -1px 0 0 var(--color-border);
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+@utility frame {
+  --tw-inset-ring-shadow: inset 0 0 0 1px var(--color-border);
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+@property --cols {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --rows {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --col-gap {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --row-gap {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --col-step {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 1px;
+}
+@property --row-step {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 4px;
+}
+
+@utility cols-* {
+  --cols: --value(integer);
+  grid-template-columns: repeat(
+    var(--cols),
+    round(
+      down,
+      calc((100% - var(--col-gap) * (var(--cols) - 1)) / var(--cols)),
+      var(--col-step)
+    )
+  );
+}
+
+@utility rows-* {
+  --rows: --value(integer);
+  grid-template-rows: repeat(
+    var(--rows),
+    round(
+      down,
+      calc((100% - var(--row-gap) * (var(--rows) - 1)) / var(--rows)),
+      var(--row-step)
+    )
+  );
+}
+
+@utility rule-row {
+  height: calc(var(--spacing) * 2);
+  background-image: linear-gradient(var(--color-border), var(--color-border));
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 var(--spacing);
+}
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-radius: 0 !important;
+  }
+
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-synthesis: none;
+    font-variant-ligatures: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+html [data-sonner-toaster] {
+  font-family: var(--font-sans);
+}
+html [data-sonner-toast][data-styled="true"] {
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 3);
+  font-size: 11px;
+  line-height: 16px;
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--color-border);
+}
+html [data-sonner-toast][data-styled="true"] [data-title],
+html [data-sonner-toast][data-styled="true"] [data-description] {
+  font-weight: 400;
+  line-height: 16px;
+}
+html [data-sonner-toast][data-styled="true"] [data-button] {
+  height: calc(var(--spacing) * 6);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+}
